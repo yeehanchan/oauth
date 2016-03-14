@@ -12,6 +12,16 @@
 
 </head>
 <body>
+<div id="fb-root"></div>
+  // Load the SDK asynchronously
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=570747266425321";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!--
   Below we include the Login Button social plugin. This button uses
@@ -19,10 +29,13 @@
   the FB.login() function when clicked.
 -->
 <h1>Facebook Post Life Cycle</h1>
-<div class="facebook">
-	<fb:login-button scope="public_profile,email,user_posts" onlogin="checkLoginState();">
-	</fb:login-button>
+<div class="facebook">	
+
+
+	<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email,user_posts" onlogin="checkLoginState();"></div>
+
 </div>
+
 <div id="status"></div>
 
 </body>
