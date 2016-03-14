@@ -12,7 +12,7 @@
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
       console.log(accessToken);
-
+    }
 
 
     } else if (response.status === 'not_authorized') {
@@ -31,14 +31,9 @@
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
-    if(response.status == 'connected'){
-        FB.logout(function(response) {
-            // Person is now logged out
-            console.log("User Logged out!");
-        });
-    }
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
+      console.log("get logged in status", response.status);
     });
   }
 

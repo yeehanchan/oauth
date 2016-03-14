@@ -5,7 +5,7 @@ function getUserFeeds(){
 	    function (response) {
 	      if (response && !response.error) {
 	        /* handle the result */
-	        console.log(response);
+	        console.log("getting user feed", response);
 	      }
 	    }
 	);
