@@ -4,8 +4,11 @@
 <title>Post Life Cycle</title>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/login.js"></script>
 
+<script src="js/posts.js"></script>
+<script src="js/logout.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 
 </head>
@@ -13,23 +16,11 @@
 <div id="fb-root"></div>
   <!-- // Load the SDK asynchronously -->
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=570747266425321";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script src="js/login.js"></script>
-<script src="js/posts.js"></script>
-<script src="js/logout.js"></script>
-
 <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-
 
 
 <h1>Facebook Post Life Cycle</h1>

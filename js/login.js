@@ -1,5 +1,4 @@
-// This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
+ function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
     // The response object is returned with a status field that lets the
@@ -10,12 +9,8 @@
       // Logged into your app and Facebook.
       testAPI();
       getUserFeeds();
-      var uid = response.authResponse.userID;
-      var accessToken = response.authResponse.accessToken;
-      console.log(accessToken);
-    }
-
-
+      access_token = response.status.access_token;
+      console.log(access_token);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -34,7 +29,6 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-      //console.log("get logged in status", response.status);
     });
   }
 
@@ -65,6 +59,14 @@
 
   };
 
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
