@@ -9,6 +9,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      getUserFeeds();
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
       console.log(accessToken);
@@ -33,7 +34,7 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-      console.log("get logged in status", response.status);
+      //console.log("get logged in status", response.status);
     });
   }
 
@@ -74,7 +75,4 @@
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-
-
-    getUserFeeds();
   }
