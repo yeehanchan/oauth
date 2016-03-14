@@ -4,7 +4,10 @@ h1 {
 	text-align: center;
 	margin: 40px auto;
 }
-
+#status{
+	text-align: center;
+	font-size: 40px;
+}
 .facebook {
 	text-align: center;
 	margin-top: 200px;
