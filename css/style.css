@@ -1,0 +1,18 @@
+
+
+h1 {
+	text-align: center;
+	margin: 40px auto;
+}
+
+.facebook {
+	text-align: center;
+	margin-top: 200px;
+}
+
+
+
+fb:login-button {
+	width : 200px;
+	height: 120px;
+}
