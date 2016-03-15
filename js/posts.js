@@ -5,7 +5,6 @@ var posts = [];
 var	ids = [];
 var nextpage;
 var created_times = [];
-var post_objects = [];
 var updated_times = [];
 var comment_times = [];
 function getUserFeeds(){
@@ -23,33 +22,38 @@ function getUserFeeds(){
 			        }        
 		     }
 	});
-
+	console.log("this is test", posts.length);
 	getCreatedTime();
-    getPostObject();
-    getCommentTimes();
+	console.log("this is the created time",created_times.length);	
+	getPostObject();
+	console.log("this is the updated_time", updated_times.length);
+	getCommentTimes();
+	console.log("this is the comment_times", comment_times.length);
 }
+
+
+
 function getCreatedTime(){
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
 }
+
+
 function getPostObject(){
+
 	posts.forEach(function(entry){
 		ids.push(entry.id);
-	})
+	});
 	ids.forEach(function(entry){
-		FB.api(entry, function(response){
+		FB.api(entry,{"field":"updated_time"}, function(response){
 			if(response && !response.error) {
-				post_objects = response.data;
+				updated_times.push(response.updated_time);
 			}
 		});
 	});
-
-	post_objects.forEach(function(entry){
-		updated_times.push(entry.updated_time);
-	});
-
 }
+
 
 function getCommentTimes(){
 	ids.forEach(function(entry){
