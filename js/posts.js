@@ -7,11 +7,13 @@ function getUserFeeds(response){
 		      if (response && !response.error) {
 		      	/* handle the result */
 		        posts = response.data;
-		        while(posts.length > 0){
+		        var i = 0;
+		        while(i < 5){
 		        	nextpage = response.paging.next;
 		        	FB.api(nextpage, function(response){
 		        		posts = posts.concat(response.data);
 		        	});
+		        	i++;
 		        }
 
 		      }
