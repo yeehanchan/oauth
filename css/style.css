@@ -19,4 +19,7 @@ canvas {
 }
 .graph{
 	margin : 20 auto;
+	text-align: center;
+	border-width: 2px;
+	width: 200px;
 }

@@ -103,5 +103,3 @@ function giveChartData(){
 		}
 	});	
 }
-var clickCount = 0;
-drawGraph();
