@@ -5,16 +5,9 @@ var created_times = [];
 var updated_times = [];
 var comment_times = [];
 
-function async(getUserFeeds, getPostObject) {
-    setTimeout(function() {
-        getUserFeeds();
-        if (getPostObject) {getPostObject();}
-    }, 0);
-}
-as
 
 
-function getUserFeeds(getCreatedTime){
+function getUserFeeds(){
 	FB.api("/me/feed", function (response) {
 		     if (response && !response.error) {
 		      	/* handle the result */
