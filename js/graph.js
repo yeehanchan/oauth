@@ -5,7 +5,7 @@ function drawGraph(){
 	var k = Object.keys(graphData[i]);
 	var v = [];
 	k.forEach(function(key){
-		v.push(graphData[i][k])
+		v.push(graphData[i][key]);
 	});
 	var data = {
 	    labels: k,
