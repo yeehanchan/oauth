@@ -1,3 +1,6 @@
+ 
+ var posts = [];
+
  function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -8,9 +11,11 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      getUserFeeds();
+      posts = getUserFeeds();
       access_token = response.status.access_token;
       console.log(access_token);
+
+
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +

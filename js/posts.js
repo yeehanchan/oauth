@@ -3,7 +3,7 @@ function getUserFeeds(){
 	FB.api("/me/feed", function (response) {
 	      if (response && !response.error) {
 	        /* handle the result */
-	        console.log("sending user feed", response);
+	        return response;
 	      }
 	    }
 	);
