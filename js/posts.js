@@ -20,16 +20,12 @@ function getUserFeeds(){
 								posts = posts.concat(response.data);
 							});
 							i++;
-			        }
-			        getCreatedTime();
-					getPostObject();
-					getCommentTimes();		        
+			        }        
 		     }
 	});
 
 }
 function getCreatedTime(){
-	console.log("get times is called");
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
@@ -56,9 +52,12 @@ function getCommentTimes(){
 	ids.forEach(function(entry){
 		FB.api(entry+"/comments", function(response){
 			if(response && !response.error) {
-				response.data.forEach(function(entry){
-					comment_times.push(entry.created_time);
+				var each_post = [];
+				response.data.forEach(function(comment){
+					each_post.push(comment.created_time);
+					console.log(each_post.length);
 				});
+				comment_times.push(each_post);
 			}
 		});
 	});
