@@ -30,7 +30,7 @@ function getCreatedTime(){
 		created_times.push(entry.created_time);
 	});
 	console.log("this is the created_time", created_times.length);
-	
+	getPostObject(posts);
 }
 
 function getPostObject(){
@@ -46,7 +46,7 @@ function getPostObject(){
 		});
 	});
 	console.log("this is the updated_time", updated_times.length);
-
+	getCommentTimes();
 }
 
 
