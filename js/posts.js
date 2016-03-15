@@ -15,7 +15,5 @@ function getUserFeeds(response){
 		        }
 
 		      }
-	      }
-	    }
-	);
+	});
 }
