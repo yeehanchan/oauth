@@ -18,9 +18,18 @@ canvas {
 	margin: 0 auto;
 }
 .graph{
-	margin : 20 auto;
+	float:left;
 	text-align: center;
+	margin: 100px;
+}
+.graphbtn:{
+	floa:right;
+	text-align: center;
+	margin-right: 100px;
+	margin-top: 100px;
 	border-width: 2px;
-	width: 200px;
-	height : 40px;
+	width: 100px;
+	height: 40px;
+	background-color: 'red';
+	color: 'white';
 }
