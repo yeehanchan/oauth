@@ -12,21 +12,21 @@ function getUserFeeds(){
 	FB.api("/me/feed", function (response) {
 		     if (response && !response.error) {
 		      	/* handle the result */
-		        posts = response.data;
-		        var i = 0;
-		        while(i < 3){
-						nextpage = response.paging.next;
-						FB.api(nextpage, function(response){
-							posts = posts.concat(response.data);
-						});
-						i++;
-		        	}		        
+			        posts = response.data;
+			        var i = 0;
+			        while(i < 3){
+							nextpage = response.paging.next;
+							FB.api(nextpage, function(response){
+								posts = posts.concat(response.data);
+							});
+							i++;
+			        }
+			        getCreatedTime();
+					getPostObject();
+					getCommentTimes();		        
 		     }
 	});
 
-	getCreatedTime();
-	getPostObject();
-	getCommentTimes();
 }
 function getCreatedTime(){
 	console.log("get times is called");
