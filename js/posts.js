@@ -1,6 +1,6 @@
 /* make the API call */
 
-var posts = ['lalala'];
+var posts = [];
 var nextpage;
 function getUserFeeds(response){
 	FB.api("/me/feed", function (response) {
