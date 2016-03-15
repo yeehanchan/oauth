@@ -100,5 +100,8 @@ function giveChartData(){
 	k.forEach(function(key){
 		v.push(dic[key]);
 	});
-	return k, v;
+	result = []
+	result.push(k);
+	result.push(v);
+	return result;
 }
