@@ -35,7 +35,7 @@ function getCreatedTime(){
 	});
 }
 function getPostObject(){
-	ids = posts.forEach(function(entry){
+	posts.forEach(function(entry){
 		ids.push(entry.id);
 	})
 	ids.forEach(function(entry){
