@@ -82,8 +82,8 @@ function changeTimeToDate(time){
 }
 
 
-function giveChartData(){
-	date = changeTimeToDate(comment_times);
+function giveChartData(i){
+	date = changeTimeToDate(comment_times)[i];
 	dic = {}
 	date.forEach(function(each_post){
 		each_post.forEach(function(each_comment_date){
