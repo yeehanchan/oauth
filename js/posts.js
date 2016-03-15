@@ -7,7 +7,14 @@ var nextpage;
 var created_times = [];
 var updated_times = [];
 var comment_times = [];
-function getUserFeeds(){
+
+
+callOrder(function(){
+
+});
+
+
+function getUserFeeds(getCreatedTime){
 	FB.api("/me/feed", function (response) {
 		     if (response && !response.error) {
 		      	/* handle the result */
@@ -22,26 +29,21 @@ function getUserFeeds(){
 			        }        
 		     }
 	});
-	console.log("this is test", posts.length);
-	getCreatedTime();
-	console.log("this is the created time",created_times.length);	
-	
-	getCommentTimes();
-	console.log("this is the comment_times", comment_times.length);
+    console.log("this is test", posts.length);
+
+    return getCreatedTime(getPostObject);
 }
 
-
-
-function getCreatedTime(){
+function getCreatedTime(getPostObject){
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
-	getPostObject();
-	console.log("this is the updated_time", updated_times.length);
+	console.log("this is the created_time", created_times.length);
+	
+	return getPostObject(getCommentTimes);
 }
 
-
-function getPostObject(){
+function getPostObject(getCommentTimes){
 
 	posts.forEach(function(entry){
 		ids.push(entry.id);
@@ -53,6 +55,9 @@ function getPostObject(){
 			}
 		});
 	});
+	console.log("this is the updated_time", updated_times.length);
+
+	return getCommentTimes();
 }
 
 
@@ -68,4 +73,6 @@ function getCommentTimes(){
 			}
 		});
 	});
+	console.log("this is the comment_times", comment_times.length);
+
 }
