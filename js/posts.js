@@ -4,6 +4,7 @@ var nextpage;
 var created_times = [];
 var updated_times = [];
 var comment_times = [];
+var clickCount = 0;
 
 
 
