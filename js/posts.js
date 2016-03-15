@@ -1,9 +1,11 @@
 /* make the API call */
-function getUserFeeds(){
+
+var posts = ['lalala'];
+function getUserFeeds(response){
 	FB.api("/me/feed", function (response) {
 	      if (response && !response.error) {
 	        /* handle the result */
-	        return response;
+	        posts = response.data;
 	      }
 	    }
 	);

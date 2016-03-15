@@ -1,6 +1,4 @@
  
- var posts = [];
-
  function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -11,7 +9,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      posts = getUserFeeds();
+      getUserFeeds();
       access_token = response.status.access_token;
       console.log(access_token);
 
