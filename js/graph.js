@@ -1,6 +1,6 @@
 function drawGraph(i){
 
-	document.getElementById("graph").innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
+	document.getElementById('graph').innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
 	var ctx = document.getElementById("myChart").getContext("2d");
 	var result = giveChartData(99);
 	console.log("graph getting data",result);
