@@ -1,6 +1,3 @@
-/* make the API call */
-
-
 var posts = [];
 var	ids = [];
 var nextpage;
@@ -8,10 +5,13 @@ var created_times = [];
 var updated_times = [];
 var comment_times = [];
 
-
-callOrder(function(){
-
-});
+function async(getUserFeeds, getPostObject) {
+    setTimeout(function() {
+        getUserFeeds();
+        if (getPostObject) {getPostObject();}
+    }, 0);
+}
+as
 
 
 function getUserFeeds(getCreatedTime){
@@ -30,20 +30,17 @@ function getUserFeeds(getCreatedTime){
 		     }
 	});
     console.log("this is test", posts.length);
-
-    return getCreatedTime(getPostObject);
 }
 
-function getCreatedTime(getPostObject){
+function getCreatedTime(){
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
 	console.log("this is the created_time", created_times.length);
 	
-	return getPostObject(getCommentTimes);
 }
 
-function getPostObject(getCommentTimes){
+function getPostObject(){
 
 	posts.forEach(function(entry){
 		ids.push(entry.id);
@@ -57,7 +54,6 @@ function getPostObject(getCommentTimes){
 	});
 	console.log("this is the updated_time", updated_times.length);
 
-	return getCommentTimes();
 }
 
 
