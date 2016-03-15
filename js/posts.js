@@ -4,7 +4,7 @@ var nextpage;
 var created_times = [];
 var updated_times = [];
 var comment_times = [];
-var clickCount = 0;
+var clickCount = -1;
 
 
 
@@ -103,4 +103,10 @@ function giveChartData(){
 			graphData.push(dic);
 		}
 	});	
+}
+
+
+function onDrawCalled(){
+	drawGraph(clickCount);
+	clickCount++;
 }

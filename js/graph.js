@@ -1,12 +1,11 @@
-function drawGraph(){
-	clickCount++;
+function drawGraph(i){
 	document.getElementById('graph').innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
 	var ctx = document.getElementById("myChart").getContext("2d");
 
-	var k = Object.keys(graphData[cilckCount]);
+	var k = Object.keys(graphData[i]);
 	var v = [];
 	k.forEach(function(key){
-		v.push(graphData[clickCount][k])
+		v.push(graphData[i][k])
 	});
 	var data = {
 	    labels: k,
