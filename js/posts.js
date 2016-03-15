@@ -12,24 +12,27 @@ function getUserFeeds(){
 		     if (response && !response.error) {
 		      	/* handle the result */
 			        posts = response.data;
-			        var i = 0;
-			        while(i < 3){
-							nextpage = response.paging.next;
+			        
+					nextpage = response.paging.next;
+					FB.api(nextpage, function(response){
+						posts = posts.concat(response.data);
+						FB.api(nextpage, function(response){
+							posts = posts.concat(response.data);
 							FB.api(nextpage, function(response){
 								posts = posts.concat(response.data);
-							});
-							i++;
-			        }        
+								getCreatedTime();
+								getPostObject();
+							});						
+						});
+					});
 		     }
 	});
-	getCreatedTime();
 }
 
 function getCreatedTime(){
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
-	getPostObject(posts);
 }
 
 function getPostObject(){
@@ -103,3 +106,4 @@ function giveChartData(i){
 	result.push(v);
 	return result;
 }
+

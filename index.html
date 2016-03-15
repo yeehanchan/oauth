@@ -10,7 +10,6 @@
 <script src="js/logout.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/chart.js/Chart.js"></script>
-<script src="js/graph.js"></script>
 
 
 </head>
@@ -35,9 +34,11 @@
 	<fb:login-button scope="public_profile,email,user_friends, user_posts, user_likes" onlogin="checkLoginState();"  data-size="xlarge" data-auto-logout-link="true" ></fb:login-button>
 
 </div>
+
+<div id="graph"></div>
+<script src="js/graph.js"></script>
 <script>
 	drawGraph(99);
 </script>
-<div id="graph"></div>
 </body>
 </html>
