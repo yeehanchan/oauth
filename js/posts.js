@@ -24,6 +24,9 @@ function getUserFeeds(){
 		     }
 	});
 
+	getCreatedTime();
+    getPostObject();
+    getCommentTimes();
 }
 function getCreatedTime(){
 	posts.forEach(function(entry){
@@ -55,7 +58,6 @@ function getCommentTimes(){
 				var each_post = [];
 				response.data.forEach(function(comment){
 					each_post.push(comment.created_time);
-					console.log(each_post.length);
 				});
 				comment_times.push(each_post);
 			}

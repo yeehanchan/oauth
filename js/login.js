@@ -10,9 +10,8 @@
       // Logged into your app and Facebook.
       testAPI();
       getUserFeeds();
-      getCreatedTime();
-      getPostObject();
-      getCommentTimes();    
+
+
       access_token = response.status.access_token;
       console.log(access_token);
 
