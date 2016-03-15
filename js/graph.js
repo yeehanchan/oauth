@@ -1,4 +1,3 @@
-var clickCount = 0;
 function drawGraph(){
 	clickCount++;
 	document.getElementById('graph').innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
