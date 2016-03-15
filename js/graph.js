@@ -1,6 +1,8 @@
+function drawGraph(i){
+	document.getElementById("graph").innerHTML = "<canvas id="myChart" width="400" height="400"></canvas>";
 	var ctx = document.getElementById("myChart").getContext("2d");
 	var result = giveChartData(99);
-	console.log(result);
+	console.log("graph getting data",result);
 	var data = {
 	    labels: result[0],
 	    datasets: [
@@ -14,7 +16,8 @@
 	        }
     	]
 	};
-	options = {
+
+	var options = {
 
 		    ///Boolean - Whether grid lines are shown across the chart
 		    scaleShowGridLines : true,
@@ -63,3 +66,9 @@
 
 	};
 	var myLineChart = new Chart(ctx).Line(data, options);
+}
+
+
+
+	
+	
