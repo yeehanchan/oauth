@@ -25,8 +25,7 @@ function getUserFeeds(){
 	console.log("this is test", posts.length);
 	getCreatedTime();
 	console.log("this is the created time",created_times.length);	
-	getPostObject();
-	console.log("this is the updated_time", updated_times.length);
+	
 	getCommentTimes();
 	console.log("this is the comment_times", comment_times.length);
 }
@@ -37,6 +36,8 @@ function getCreatedTime(){
 	posts.forEach(function(entry){
 		created_times.push(entry.created_time);
 	});
+	getPostObject();
+	console.log("this is the updated_time", updated_times.length);
 }
 
 
