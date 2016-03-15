@@ -105,8 +105,3 @@ function giveChartData(){
 	});	
 }
 
-
-function onDrawCalled(){
-	drawGraph(clickCount);
-	clickCount++;
-}
