@@ -85,15 +85,13 @@ function changeTimeToDate(time){
 function giveChartData(i){
 	date = changeTimeToDate(comment_times)[i];
 	dic = {}
-	date.forEach(function(each_post){
-		each_post.forEach(function(each_comment_date){
-			if(!dic.hasOwnProperty(each_comment_date)){
-				dic[each_comment_date] = 1;
-			}
-			else{
-				dic[each_comment_date]++;
-			}
-		});
+	date.forEach(function(each_comment_date){
+		if(!dic.hasOwnProperty(each_comment_date)){
+			dic[each_comment_date] = 1;
+		}
+		else{
+			dic[each_comment_date]++;
+		}
 	});
 	k = Object.keys(dic);
 	v = [];
