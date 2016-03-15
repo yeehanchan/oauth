@@ -1,12 +1,16 @@
-function drawGraph(i){
-
+var clickCount = 0;
+function drawGraph(){
+	clickCount++;
 	document.getElementById('graph').innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
 	var ctx = document.getElementById("myChart").getContext("2d");
-	var result = giveChartData(99);
-	console.log("graph getting data",result);
 
+	var k = Object.keys(graphData[cilckCount]);
+	var v = [];
+	k.forEach(function(key){
+		v.push(graphData[clickCount][k])
+	});
 	var data = {
-	    labels: result[0],
+	    labels: k,
 	    datasets: [
 	        {
 	            label: "life cycle",
@@ -14,7 +18,7 @@ function drawGraph(i){
             	strokeColor: "rgba(151,187,205,0.8)",
             	highlightFill: "rgba(151,187,205,0.75)",
             	highlightStroke: "rgba(151,187,205,1)",
-	            data: result[1]
+	            data: v
 	        }
     	]
 	};

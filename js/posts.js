@@ -85,25 +85,23 @@ function changeTimeToDate(time){
 }
 
 
-function giveChartData(i){
-	date = changeTimeToDate(comment_times)[i];
-	dic = {}
-	date.forEach(function(each_comment_date){
-		if(!dic.hasOwnProperty(each_comment_date)){
-			dic[each_comment_date] = 1;
+var graphData = [];
+function giveChartData(){
+	date = changeTimeToDate(comment_times);
+	date.forEach(function(each_post){
+		if(each_post.length){
+			dic = {};
+			each_post.forEach(function(each_comment){
+				if(!dic.hasOwnProperty(each_comment)){
+					dic[each_comment] = 1;
+				}
+				else{
+					dic[each_comment]++;
+				}
+			});			
+			graphData.push(dic);
 		}
-		else{
-			dic[each_comment_date]++;
-		}
-	});
-	k = Object.keys(dic);
-	v = [];
-	k.forEach(function(key){
-		v.push(dic[key]);
-	});
-	result = []
-	result.push(k);
-	result.push(v);
-	return result;
+	});	
 }
-
+var clickCount = 0;
+drawGraph();
