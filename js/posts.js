@@ -62,3 +62,43 @@ function getCommentTimes(){
 	});
 
 }
+
+
+function changeTimeToDate(time){
+	date = [];
+	time.forEach(function(each_post){
+		if(each_post){
+			var new_each_post = [];
+			each_post.forEach(function(comment){
+				new_each_post.push(comment.substr(0,10));
+			});
+			date.push(new_each_post);
+		}
+		else{
+			date.push([]);
+		}
+	});
+	return date;
+}
+
+
+function giveChartData(){
+	date = changeTimeToDate(comment_times);
+	dic = {}
+	date.forEach(function(each_post){
+		each_post.forEach(function(each_comment_date){
+			if(!dic.hasOwnProperty(each_comment_date)){
+				dic[each_comment_date] = 1;
+			}
+			else{
+				dic[each_comment_date]++;
+			}
+		});
+	});
+	k = Object.keys(dic);
+	v = [];
+	k.forEach(function(key){
+		v.push(dic[key]);
+	});
+	return k, v;
+}
