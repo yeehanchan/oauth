@@ -21,8 +21,14 @@ function getUserFeeds(){
 							posts = posts.concat(response.data);
 							FB.api(nextpage, function(response){
 								posts = posts.concat(response.data);
-								getCreatedTime();
-								getPostObject();
+								FB.api(nextpage, function(response){
+									posts = posts.concat(response.data);
+									FB.api(nextpage, function(response){
+										posts = posts.concat(response.data);
+										getCreatedTime();
+										getPostObject();
+									});		
+								});		
 							});						
 						});
 					});
