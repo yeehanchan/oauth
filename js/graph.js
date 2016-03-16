@@ -1,6 +1,9 @@
 function drawGraph(){
 	giveChartData();
 	i = clickCount++;
+	if(i > -1){
+		document.getElementById('graphbtn').innerHTML = 'NextPost';
+	}
 	document.getElementById('graph').innerHTML = "<canvas id='myChart' width='400' height='400'></canvas>";
 	var ctx = document.getElementById("myChart").getContext("2d");
 	var k = Object.keys(graphData[i]);
