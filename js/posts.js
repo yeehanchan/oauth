@@ -103,5 +103,10 @@ function giveChartData(){
 			graphData.push(dic);
 		}
 	});	
+	for(i=0; i < graphData.length; i++){
+		if(Object.keys(graphData[i]) < 2){
+			graphData.splice(i,1);
+		}
+	}
 }
 
