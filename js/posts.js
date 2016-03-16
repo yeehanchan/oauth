@@ -104,7 +104,7 @@ function giveChartData(){
 		}
 	});	
 	for(i=0; i < graphData.length; i++){
-		if(Object.keys(graphData[i]) < 2){
+		if(Object.keys(graphData[i]).length < 2){
 			graphData.splice(i,1);
 		}
 	}
